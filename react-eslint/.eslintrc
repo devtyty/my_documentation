@@ -1,0 +1,97 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+      "@react-native-community/eslint-config",
+      "prettier",
+      "eslint:recommended",
+      "plugin:react-hooks/recommended",
+      "plugin:import/typescript",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:react/recommended",
+      "plugin:react-native/all",
+      "plugin:react-hooks/recommended"
+    ],
+    "plugins": [
+      "react",
+      "react-native",
+      "@typescript-eslint",
+      "import",
+      "simple-import-sort"
+    ],
+    "overrides": [
+      {
+        "files": ["*.ts", "*.tsx", "*.js"],
+        "rules": {
+          "@typescript-eslint/no-shadow": ["error"],
+          "no-shadow": "off",
+          "consistent-this": "off",
+          "@typescript-eslint/no-var-requires": "off",
+          "react-hooks/exhaustive-deps": "off",
+          "react/display-name": "off",
+          "@typescript-eslint/no-empty-interface": "off",
+          "@typescript-eslint/no-empty-function": ["error"],
+          "@typescript-eslint/ban-ts-comment": "off",
+          "@typescript-eslint/no-unused-vars": ["error"],
+          "@typescript-eslint/no-namespace": "off",
+          "@typescript-eslint/no-this-alias": "off",
+          "react-native/no-color-literals": ["error"],
+          "react/prop-types": "off",
+          "react/react-in-jsx-scope": "off",
+          "simple-import-sort/imports": [
+            "error",
+            {
+              "groups": [
+                ["^react", "^@?\\w"],
+                [
+                  "^(@utils)(/(?!Fontsize)|$)",
+                  "^(@configuration)(/.*|$)",
+                  "^(@redux-actions)(/.*|$)",
+                  "^(@constants)(/.*|$)",
+                  "^(@services)(/.*|$)",
+                  "^(@hooks)(/.*|$)",
+                  "^(@remote)(/.*|$)",
+                  "^(@shared/services)(/.*|$)",
+                  "^(@i18n)(/.*|$)",
+                  "^(@mobx)(/.*|$)",
+                  "^(@app)(/.*|$)",
+                  "^(@models)",
+                  "^(@redux-models)"
+                ],
+                ["^(@navigation)(/.*|$)", "^(@screens)(/.*|$)"],
+                ["^(@components)(/.*|$)", "^(@modals)(/.*|$)"],
+                // Side effect imports.
+                ["^\\u0000"],
+                // Parent imports. Put `..` last.
+                ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+                // Other relative imports. Put same-folder imports and `.` last.
+                ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+                // Style imports.
+                [
+                  "^(@utils/Fontsize)(/.*|$)",
+                  "^(@assets)(/.*|$)",
+                  "^(@themes)(/.*|$)"
+                ]
+              ]
+            }
+          ],
+          "react/jsx-sort-props": [
+            "error",
+            {
+              "shorthandFirst": true,
+              "shorthandLast": false,
+              "ignoreCase": false,
+              "locale": "en",
+              "noSortAlphabetically": false,
+              "reservedFirst": ["ref", "key"],
+              "callbacksLast": true,
+              "multiline": "last"
+            }
+          ],
+          "react/jsx-boolean-value": ["error"]
+        }
+      }
+    ]
+  }
+  

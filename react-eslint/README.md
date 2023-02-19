@@ -1,0 +1,1 @@
+# Phần này là các cú pháp thiết lập eslint trong project native
